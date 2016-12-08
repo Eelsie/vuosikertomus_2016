@@ -86,12 +86,13 @@ $helvetica: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 }
 
 hr {
-  display: block;
-  height: 1px;
   border: 0;
-  border-top: 1px solid #ccc;
-  margin: 1em 0;
-  padding: 0;
+  height: 2px;
+  margin: 1.4rem 0;
+  background-image: -webkit-linear-gradient(left, #f0f0f0, $blue, $blue, #f0f0f0);
+  background-image: -moz-linear-gradient(left, #f0f0f0, $blue, $blue, #f0f0f0);
+  background-image: -ms-linear-gradient(left, #f0f0f0, $blue, $blue, #f0f0f0);
+  background-image: -o-linear-gradient(left, #f0f0f0, $blue, $blue, #f0f0f0);
 }
 
 iframe,
@@ -170,7 +171,7 @@ body {
   float: left;
   min-height: 1px;
   width: 100%;
-  padding: 20px;
+  padding: 0 20px;
 }
 
 // .col-1 {
@@ -194,7 +195,7 @@ body {
 
 /* TYPOGRAPHY */
 
-h1, h2 {
+h1, h2, p .firstletter {
   font-family: $veneer;
   font-weight: normal;
   text-transform: uppercase;
@@ -218,14 +219,44 @@ h3 {
 }
 
 h2 {
-  color: $green;
+  color: $pink;
   font-size: 2.4rem;
   line-height: 1.1;
-  margin-bottom: 20px;
+  margin-bottom: 2rem;
 }
 
 p {
   line-height: 1.6;
+  margin-top: 0;
+}
+
+p .firstletter {
+  float: left;
+  color: $pink;
+  font-size: 5rem;
+  line-height: 60px;
+  padding-top: 4px;
+  padding-right: 8px;
+}
+
+.intro {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin: 0 0 2rem 0;
+}
+
+.nosto {
+  margin: 2rem 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.line {
+  display: block;
+  background-color: $blue;
+  margin: 15px 0;
+  width: 70px;
+  height: 4px;
 }
 
 
@@ -312,30 +343,40 @@ header {
 }
 
 
-
-/* ARTICLES */
-
-section {
-  height: 1000px;
-}
-
 /* MEDIA QUERIES */
 
 @media only screen and (min-width: 480px) {
   html {
-    font-size: 15px;
+    font-size: 16px;
+  }
+}
+
+@media only screen and (min-width: 580px) {
+  .col {
+    padding-right: 15%;
   }
 }
 
 @media only screen and (min-width: 768px) {
-  html {
-    font-size: 16px;
+  .grid-container {
+    margin: 0 auto;
   }
   header {
     border-width: 30px;
   }
   [class*='col'] {
-    padding: 30px;
+    padding: 0 30px;
+  }
+  .columns {
+    -moz-columns: 18rem;
+    -webkit-columns: 18rem;
+    columns: 18rem;
+    -moz-column-gap: 2rem;
+    -webkit-column-gap: 2rem;
+    column-gap: 2rem;
+    -moz-column-fill: balance;
+    -webkit-column-fill: balance;
+    column-fill: balance;
   }
   .logo {
     top: 60px;
@@ -347,6 +388,7 @@ section {
   }
   h3 {
     font-size: 2rem;
+    text-align: center;
   }
   #menu {
     top: 60px;
