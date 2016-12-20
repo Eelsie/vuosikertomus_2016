@@ -85,7 +85,7 @@ $helvetica: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   text-shadow: none;
 }
 
-hr {
+hr.divide {
   border: 0;
   margin: 2rem 0;
   height: 2px;
@@ -129,6 +129,10 @@ html,
 body {
   width: 100%;
   height: 100%;
+}
+
+.clearfix {
+  clear: both;
 }
 
 .medium {
@@ -305,6 +309,19 @@ figcaption {
   color: lighten($black, 15%);
 }
 
+hr.case {
+  height: 80px;
+	border: 0;
+	box-shadow: 0 80px 80px -50px #e7e6dc inset;
+  margin-bottom: -20px;
+}
+
+hr.case-end {
+  height: 60px;
+  border: 0;
+  box-shadow: 0 -50px 50px -25px #e7e6dc inset;
+}
+
 
 
 /* HEADER */
@@ -414,7 +431,6 @@ footer {
   }
 }
 
-
 .img-collage {
   margin-bottom: 8rem;
 }
@@ -482,7 +498,7 @@ footer {
   .small {
     display: none;
   }
-  hr {
+  hr.divide {
     margin: 4rem 0;
   }
   .wrap a {

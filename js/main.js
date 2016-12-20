@@ -8,6 +8,10 @@ function play2(){
   document.getElementById('video2').innerHTML = '<iframe  src="http://www.youtube.com/embed/fuDwmNlZfMo?autoplay=1&rel=0&theme=light&color=white" frameborder="0"></iframe>';
 }
 
+function play3(){
+  document.getElementById('video3').innerHTML = '<iframe  src="http://www.youtube.com/embed/u46RcoqPz4Y?autoplay=1&rel=0&theme=light&color=white" frameborder="0"></iframe>';
+}
+
 
 $(document).ready(function(){
 
@@ -65,7 +69,6 @@ $(window).scrollTop(0);
       slidingBottomImg('.skew:nth-child(2)', 'dia-showing02');
       slidingBottomImg('.skew:nth-child(3)', 'dia-showing03');
       slidingBottomImg('.skew:nth-child(4)', 'dia-showing04');
-      slidingBottomImg('.skew:nth-child(5)', 'dia-showing05');
       slidingBottom('#pic1');
       slidingBottom('#ohjelmatyo');
       slidingBottom('#pic2');
