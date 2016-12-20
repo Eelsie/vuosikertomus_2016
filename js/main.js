@@ -1,3 +1,14 @@
+// video play
+
+function play(){
+  document.getElementById('video1').innerHTML = '<iframe  src="http://www.youtube.com/embed/QdwOBDADbRA?autoplay=1&rel=0&theme=light&color=white" frameborder="0"></iframe>';
+}
+
+function play2(){
+  document.getElementById('video2').innerHTML = '<iframe  src="http://www.youtube.com/embed/fuDwmNlZfMo?autoplay=1&rel=0&theme=light&color=white" frameborder="0"></iframe>';
+}
+
+
 $(document).ready(function(){
 
 // force scroll to top on refresh
@@ -45,17 +56,22 @@ $(window).scrollTop(0);
       }
     }
 
-    if($('.logo').css('width') === '160px') {
+    // if($('.logo').css('width') === '160px') {
+
       // slidingBottom('#intro');
       slidingBottom('#tytot');
       slidingBottom('#humanitaarinen');
-      slidingBottomImg('.resp-img:first-child', 'dia-showing01');
-      slidingBottomImg('.resp-img:nth-child(2)', 'dia-showing02');
-      slidingBottomImg('.resp-img:nth-child(3)', 'dia-showing03');
-      slidingBottomImg('.resp-img:nth-child(4)', 'dia-showing04');
-      slidingBottomImg('.resp-img:nth-child(5)', 'dia-showing05');
+      slidingBottomImg('.skew:first-child', 'dia-showing01');
+      slidingBottomImg('.skew:nth-child(2)', 'dia-showing02');
+      slidingBottomImg('.skew:nth-child(3)', 'dia-showing03');
+      slidingBottomImg('.skew:nth-child(4)', 'dia-showing04');
+      slidingBottomImg('.skew:nth-child(5)', 'dia-showing05');
+      slidingBottom('#pic1');
+      slidingBottom('#ohjelmatyo');
+      slidingBottom('#pic2');
 
-    }
+
+    // }
 
 
 
