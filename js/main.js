@@ -12,8 +12,34 @@ function play3(){
   document.getElementById('video3').innerHTML = '<iframe  src="http://www.youtube.com/embed/u46RcoqPz4Y?autoplay=1&rel=0&theme=light&color=white" frameborder="0"></iframe>';
 }
 
+function play4(){
+  document.getElementById('video4').innerHTML = '<iframe  src="http://www.youtube.com/embed/bpO7ev2OsVI?autoplay=1&rel=0&theme=light&color=white" frameborder="0"></iframe>';
+}
+
+function play5(){
+  document.getElementById('video5').innerHTML = '<iframe  src="http://www.youtube.com/embed/9eqm8i3T9l4?autoplay=1&rel=0&theme=light&color=white" frameborder="0"></iframe>';
+}
+
+function play6(){
+  document.getElementById('video6').innerHTML = '<iframe  src="http://www.youtube.com/embed/3BVj4-vObb8?autoplay=1&rel=0&theme=light&color=white" frameborder="0"></iframe>';
+}
+
+function play7(){
+  document.getElementById('video7').innerHTML = '<iframe  src="http://www.youtube.com/embed/SVzUi66xBg8?autoplay=1&rel=0&theme=light&color=white" frameborder="0"></iframe>';
+}
+
+function play8(){
+  document.getElementById('video8').innerHTML = '<iframe  src="http://www.youtube.com/embed/fRsnrwfOI3Q?autoplay=1&rel=0&theme=light&color=white" frameborder="0"></iframe>';
+}
+
 
 $(document).ready(function(){
+
+  if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+    $("div.col.columns").addClass('col-mobile');
+    $("div.col.title").addClass('col-mobile');
+    $("div.col").removeClass('columns');
+  }
 
 // force scroll to top on refresh
 $(window).scrollTop(0);
@@ -46,7 +72,9 @@ $(window).scrollTop(0);
     $(".logo").css("opacity", 1 - $(window).scrollTop() / 250);
 
 // parallax of header image
-    $('header').css('background-position', 'center ' + -wScroll/3 + 'px');
+    if ($(window).width() > 1400){
+      $('header').css('background-position', 'center ' + -wScroll/3 + 'px');
+    }
 
 // elements fade in and slide from bottom
     function slidingBottom(el) {
@@ -60,9 +88,6 @@ $(window).scrollTop(0);
       }
     }
 
-    // if($('.logo').css('width') === '160px') {
-
-      // slidingBottom('#intro');
       slidingBottom('#tytot');
       slidingBottom('#humanitaarinen');
       slidingBottomImg('.skew:first-child', 'dia-showing01');
@@ -72,17 +97,24 @@ $(window).scrollTop(0);
       slidingBottom('#pic1');
       slidingBottom('#ohjelmatyo');
       slidingBottom('#pic2');
-
-
-    // }
-
-
-
-
+      slidingBottom('#infograffa');
+      slidingBottom('#paiva');
+      slidingBottom('#pic3');
+      slidingBottom('#inno');
+      slidingBottom('#pic4');
+      slidingBottom('#pic5');
+      slidingBottom('#vapaaehtoiset');
+      slidingBottom('#pic7');
+      slidingBottom('#pic8');
+      slidingBottom('#kotimaantyo');
+      slidingBottom('#pic9');
+      slidingBottom('#pic10');
+      slidingBottom('#yritysyhteistyo');
+      slidingBottom('#kummit');
+      slidingBottom('#vv');
+      slidingBottom('#pic11');
+      slidingBottom('#talous');
+      slidingBottom('#jh');
   });
-
-
-
-
 
 });

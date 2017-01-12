@@ -106,6 +106,13 @@ a {
   text-decoration: none;
 }
 
+p a {
+  color: $blue;
+  &:hover {
+    color: $lightblue;
+  }
+}
+
 html {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -187,9 +194,69 @@ body.fade-out {
 /* GRID */
 
 .grid-container {
-  position: relative;
+  // position: relative;
   width: 100%;
   max-width: 1200px;
+}
+
+.flex-box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: stretch;
+  align-content: stretch;
+}
+
+.box {
+  flex-basis: 33.333%;
+  padding: 2rem;
+  color: #fff;
+  font-size: 1.7rem;
+  line-height: 1.1;
+  text-align: center;
+  margin: 0;
+  flex-grow: 1;
+  align-self: auto;
+  background-color: $lightblue;
+}
+
+.box:first-of-type, .box:nth-of-type(5) {
+  flex-grow: 2;
+  background-color: lighten($lightblue,20%);
+  color: $blue;
+}
+
+.box:nth-of-type(2) {
+  background-color: $blue;
+  font-size: 2.5rem;
+}
+
+
+.box:nth-of-type(3) {
+  background-color: lighten($lightblue,27%);
+  color: $blue;
+}
+
+.box span {
+  font-size: 2.4rem;
+}
+
+.box2 {
+  margin: 0;
+  min-width: 250px;
+}
+
+.box2 figure {
+  margin: 0;
+}
+
+.box2:first-of-type {
+  padding: 1.5rem;
+  background-color: lighten($pink,40%);
+}
+
+.pink {
+  color: $pink;
 }
 
 
@@ -231,10 +298,11 @@ body.fade-out {
 
 /* TYPOGRAPHY */
 
-h1, h2, p .firstletter {
+h1, h2, h3, p .firstletter,.box {
   font-family: $veneer;
   font-weight: normal;
   text-transform: uppercase;
+  letter-spacing: 0.3px;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -245,7 +313,7 @@ h1 {
   color: $white;
 }
 
-h3 {
+h3.cover {
   color: $white;
   margin-bottom: 5px;
   font: {
@@ -254,11 +322,18 @@ h3 {
   }
 }
 
-h2 {
+h2, h3 {
   color: $blue;
-  font-size: 2.4rem;
   line-height: 1.1;
+}
+
+h2 {
+  font-size: 2.4rem;
   margin-bottom: 2rem;
+}
+
+h3 {
+  font-size: 2rem;
 }
 
 p {
@@ -273,6 +348,11 @@ p .firstletter {
   line-height: 60px;
   padding-top: 4px;
   padding-right: 8px;
+}
+
+.titleb {
+  font-weight: bold;
+  margin: 1.3rem 0 0.3rem 0;
 }
 
 .intro {
@@ -317,9 +397,13 @@ hr.case {
 }
 
 hr.case-end {
-  height: 60px;
+  height: 80px;
   border: 0;
-  box-shadow: 0 -50px 50px -25px #e7e6dc inset;
+  box-shadow: 0 -80px 80px -50px #e7e6dc inset;
+}
+
+.marg-top-50 {
+  margin-top: 50px;
 }
 
 
@@ -331,11 +415,9 @@ header {
   width: 100%;
   height: 100%;
   background-image: url('../img/intro-kuva.jpg');
-  // background-position: center center;
   background-size: cover;
   background-position: center 0;
   background-repeat: no-repeat;
-  background-attachment: fixed;
   border: 20px solid $white;
 }
 
@@ -413,7 +495,7 @@ header {
 
 footer {
   background-color: $lightblue;
-  margin-top: 2rem;
+  margin-top: 4rem;
   padding: 1.8rem;
   p {
     text-align: center;
@@ -442,13 +524,13 @@ footer {
 .img-collage img {
   max-width: 80%;
   margin: 0 1rem -5rem 1rem;
-  border: 0.7rem solid lighten($lightblue, 10%);
+  border: 0.7rem solid lighten($pink, 20%);
   -webkit-box-shadow: 3px 3px 30px 0px rgba(0,2,34,0.3);
   -moz-box-shadow: 3px 3px 30px 0px rgba(0,2,34,0.3);
   box-shadow: 3px 3px 30px 0px rgba(0,2,34,0.3);
 }
 .img-collage img:first-child {
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 .dia-showing01 {
   opacity: 1;
@@ -507,15 +589,12 @@ footer {
   .img-collage {
     margin-bottom: 12rem;
   }
-  .img-collage img:first-child {
-    margin-top: 4rem;
-  }
   .img-collage img {
     border-width: 1.5rem;
     margin: 0 1rem -9rem 1rem;
   }
   .img-collage img:first-child {
-    margin-top: 7rem;
+    margin-top: 4rem;
   }
   .no-showing {
     opacity: 0;
@@ -536,17 +615,21 @@ footer {
     padding: 0 90px 0 60px;
   }
   .columns {
-    -moz-columns: 16rem;
-    -webkit-columns: 16rem;
-    columns: 16rem;
+    -moz-column-width: 16rem;
+    -webkit-column-width: 16rem;
+    column-width: 16rem;
     -moz-column-gap: 2.5rem;
     -webkit-column-gap: 2.5rem;
     column-gap: 2.5rem;
+    -webkit-column-fill: balance;
     -moz-column-fill: balance;
     column-fill: balance;
     -webkit-column-rule: 1px dotted $lightblue; /* Chrome, Safari, Opera */
     -moz-column-rule: 1px dotted $lightblue; /* Firefox */
     column-rule: 1px dotted $lightblue;
+  }
+  .col-mobile {
+    max-width: 48rem;
   }
   .logo {
     top: 60px;
@@ -578,6 +661,9 @@ footer {
     float: left;
     width: 45%;
     padding-right: 0;
+  }
+  .titleb {
+    margin: 1.3rem 0 0.3rem 0;
   }
 }
 
@@ -622,6 +708,8 @@ footer {
   }
   h2 {
     font-size: 2.8rem;
-    text-align: center;
+  }
+  header {
+    background-attachment: fixed;
   }
 }
