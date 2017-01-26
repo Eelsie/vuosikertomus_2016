@@ -32,14 +32,30 @@ function play8(){
   document.getElementById('video8').innerHTML = '<iframe  src="http://www.youtube.com/embed/fRsnrwfOI3Q?autoplay=1&rel=0&theme=light&color=white" frameborder="0"></iframe>';
 }
 
+function play9(){
+  document.getElementById('video9').innerHTML = '<iframe  src="http://www.youtube.com/embed/n8qoJ9-W0p0?autoplay=1&rel=0&theme=light&color=white" frameborder="0"></iframe>';
+}
+
 
 $(document).ready(function(){
 
-  if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+  if( /Android|webOS|iPhone|iPad/i.test(navigator.userAgent) ) {
     $("div.col.columns").addClass('col-mobile');
     $("div.col.title").addClass('col-mobile');
     $("div.col").removeClass('columns');
   }
+
+  var ua = navigator.userAgent.toLowerCase();
+if (ua.indexOf('safari') != -1) {
+  if (ua.indexOf('chrome') > -1) {
+
+  } else {
+    $("div.col.columns").addClass('col-mobile');
+    $("div.col.title").addClass('col-mobile');
+    $("div.col").removeClass('columns');
+  }
+}
+
 
 // force scroll to top on refresh
 $(window).scrollTop(0);

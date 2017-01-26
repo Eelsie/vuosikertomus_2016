@@ -159,7 +159,7 @@ figure {
   position: relative;
   padding-bottom: 56.25%;
   height: 0;
-  overflow: hidden;
+  // overflow: hidden;
   max-width: 100%;
 }
 
@@ -175,7 +175,7 @@ figure {
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center center;
-  overflow: hidden;
+  // overflow: hidden;
   cursor: pointer;
 }
 
@@ -200,24 +200,38 @@ body.fade-out {
 }
 
 .flex-box {
+  display: -webkit-flex;
   display: flex;
+  -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: stretch;
   align-content: stretch;
+  -webkit-flex-direction: row;
+    flex-direction: row;
 }
 
-.box {
-  flex-basis: 33.333%;
+.box, .box2, .box3, .box4 {
   padding: 2rem;
   color: #fff;
   font-size: 1.7rem;
   line-height: 1.1;
   text-align: center;
   margin: 0;
-  flex-grow: 1;
   align-self: auto;
+  -webkit-flex: 1 1 18rem;
+}
+
+.box, .box3  {
   background-color: $lightblue;
+}
+
+.box4 h5 {
+  color: $blue;
+}
+
+.box2 {
+  background-color: $pink;
 }
 
 .box:first-of-type, .box:nth-of-type(5) {
@@ -231,42 +245,92 @@ body.fade-out {
   font-size: 2.5rem;
 }
 
+.box3:nth-of-type(3) {
+  background-color: $blue;
+}
+
+.box3:nth-of-type(1) {
+  background-color: lighten($lightblue,20%);
+  color: $blue;
+}
+
 
 .box:nth-of-type(3) {
   background-color: lighten($lightblue,27%);
   color: $blue;
 }
 
-.box span {
+.box span, .box2 span, .box3 span {
   font-size: 2.4rem;
 }
 
-.box2 {
-  margin: 0;
-  min-width: 250px;
-}
-
-.box2 figure {
-  margin: 0;
-}
-
 .box2:first-of-type {
-  padding: 1.5rem;
-  background-color: lighten($pink,40%);
+  font-size: 2rem;
+}
+
+.box2:nth-of-type(2) {
+  background-color: $blue;
+}
+
+.box2:nth-of-type(3) {
+  background-color: lighten($pink,50%);
+  color: $pink;
+}
+
+.box2:nth-of-type(4) {
+  background-color: lighten($pink,45%);
+  color: $pink;
+}
+
+.box3 {
+  font-size: 1.7rem;
 }
 
 .pink {
   color: $pink;
 }
 
+.box4 figcaption {
+  text-align: left;
+  margin: 0 auto;
+}
 
+.box4 figure, .box4 img {
+  max-width: 300px;
+  margin: 0 auto;
+}
 
+.legend {
+  vertical-align: 10%;
+  line-height: 220%;
+  padding-right: 5px;
+  font-weight: bold;
+}
 
-/*-- our cleafix hack -- */
+.legend:first-of-type {
+  color: #0072ce;
+}
+
+.legend:nth-of-type(2) {
+  color: $lightblue;
+}
+
+.legend:nth-of-type(3) {
+  color: #808080;
+}
+
+.legend:nth-of-type(5) {
+  color: #BFBFBF;
+}
+
+.legend:nth-of-type(4) {
+  color: #404040;
+}
+
 .row:before,
 .row:after {
   content:"";
-  display: table ;
+  display: table;
   clear:both;
 }
 
@@ -298,7 +362,7 @@ body.fade-out {
 
 /* TYPOGRAPHY */
 
-h1, h2, h3, p .firstletter,.box {
+h1, h2, h3, p .firstletter,.box, .box2, .box3 {
   font-family: $veneer;
   font-weight: normal;
   text-transform: uppercase;
