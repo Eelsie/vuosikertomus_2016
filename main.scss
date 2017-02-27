@@ -108,6 +108,7 @@ a {
 
 p a {
   color: $blue;
+  text-decoration: underline;
   &:hover {
     color: $lightblue;
   }
@@ -203,92 +204,7 @@ body.fade-out {
   max-width: 1200px;
 }
 
-.flex-box {
-  display: -webkit-flex;
-  display: flex;
-  -webkit-flex-wrap: wrap;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: stretch;
-  align-content: stretch;
-  -webkit-flex-direction: row;
-    flex-direction: row;
-}
 
-.box, .box2, .box3, .box4 {
-  padding: 2rem;
-  color: #fff;
-  font-size: 1.7rem;
-  line-height: 1.1;
-  text-align: center;
-  margin: 0;
-  align-self: auto;
-  -webkit-flex: 1 1 18rem;
-}
-
-.box, .box3  {
-  background-color: $lightblue;
-}
-
-.box4 h5 {
-  color: $blue;
-}
-
-.box2 {
-  background-color: $pink;
-}
-
-.box:first-of-type, .box:nth-of-type(5) {
-  flex-grow: 2;
-  background-color: lighten($lightblue,20%);
-  color: $blue;
-}
-
-.box:nth-of-type(2) {
-  background-color: $blue;
-  font-size: 2.5rem;
-}
-
-.box3:nth-of-type(3) {
-  background-color: $blue;
-}
-
-.box3:nth-of-type(1) {
-  background-color: lighten($lightblue,20%);
-  color: $blue;
-}
-
-
-.box:nth-of-type(3) {
-  background-color: lighten($lightblue,27%);
-  color: $blue;
-}
-
-.box span, .box2 span, .box3 span {
-  font-size: 2.4rem;
-}
-
-.box2:first-of-type {
-  font-size: 2rem;
-}
-
-.box2:nth-of-type(2) {
-  background-color: $blue;
-}
-
-.box2:nth-of-type(3) {
-  background-color: lighten($pink,50%);
-  color: $pink;
-}
-
-.box2:nth-of-type(4) {
-  background-color: lighten($pink,45%);
-  color: $pink;
-}
-
-.box3 {
-  font-size: 1.7rem;
-}
 
 .pink {
   color: $pink;
@@ -343,6 +259,10 @@ body.fade-out {
   // min-height: 1px;
   width: 100%;
   padding: 0 20px;
+}
+
+.marg-50 {
+  margin: 30px 0;
 }
 
 
@@ -486,16 +406,25 @@ header {
 
 /* NAV */
 
-#menu {
+#menu, #lang {
   position: fixed;
   top: 30px;
-  right: 15px;
-  font-size: 1.5rem;
   color: $blue;
   z-index: 100;
   &:hover {
     color: $lightblue;
   }
+}
+
+#menu {
+  right: 15px;
+  font-size: 1.5rem;
+}
+
+#lang {
+  font-family: $veneer;
+  right: 50px;
+  font-size: 1.4rem;
 }
 
 .btn-open:after {
@@ -603,6 +532,80 @@ footer {
   transform: rotateZ(7deg) translate(0, 0);
 }
 
+.box, .box2, .box3, .box4 {
+  padding: 2rem;
+  color: #fff;
+  font-size: 1.7rem;
+  line-height: 1.1;
+  text-align: center;
+  margin: 0;
+  align-self: auto;
+  -webkit-flex: 1 1 18rem;
+}
+
+.box, .box3  {
+  background-color: $lightblue;
+}
+
+.box4 h5 {
+  color: $blue;
+}
+
+.box2 {
+  background-color: $pink;
+}
+
+.box:first-of-type, .box:nth-of-type(5) {
+  background-color: lighten($lightblue,20%);
+  color: $blue;
+}
+
+.box:nth-of-type(2) {
+  background-color: $blue;
+  font-size: 2.5rem;
+}
+
+.box3:nth-of-type(3) {
+  background-color: $blue;
+}
+
+.box3:nth-of-type(1) {
+  background-color: lighten($lightblue,20%);
+  color: $blue;
+}
+
+
+.box:nth-of-type(3) {
+  background-color: lighten($lightblue,27%);
+  color: $blue;
+}
+
+.box span, .box2 span, .box3 span {
+  font-size: 2.4rem;
+}
+
+.box2:first-of-type {
+  font-size: 2rem;
+}
+
+.box2:nth-of-type(2) {
+  background-color: $blue;
+}
+
+.box2:nth-of-type(3) {
+  background-color: lighten($pink,50%);
+  color: $pink;
+}
+
+.box2:nth-of-type(4) {
+  background-color: lighten($pink,45%);
+  color: $pink;
+}
+
+.box3 {
+  font-size: 1.7rem;
+}
+
 /* MEDIA QUERIES */
 
 @media only screen and (min-width: 480px) {
@@ -618,9 +621,27 @@ footer {
   .col {
     padding-right: 15%;
   }
+  .flex-box {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: stretch;
+    align-content: stretch;
+    -webkit-flex-direction: row;
+      flex-direction: row;
+  }
+  .box:first-of-type, .box:nth-of-type(5) {
+    flex-grow: 2;
+    -webkit-flex-grow: 2;
+  }
 }
 
 @media only screen and (min-width: 768px) {
+  .marg-50 {
+    margin: 50px 0;
+  }
   .marg-30 {
     margin: 30px 0;
   }
@@ -703,6 +724,10 @@ footer {
     top: 60px;
     right: 50px;
   }
+  #lang {
+    top: 59px;
+    right: 90px;
+  }
   .onecolumn {
     float: right;
     width: 55%;
@@ -714,6 +739,9 @@ footer {
   }
   .titleb {
     margin: 1.3rem 0 0.3rem 0;
+  }
+  .titlec {
+    margin: -0.3rem 0 0.3rem 0;
   }
 }
 
