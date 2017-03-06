@@ -277,7 +277,7 @@ h1, h2, h3, p .firstletter,.box, .box2, .box3 {
 }
 
 h1 {
-  line-height: 110%;
+  line-height: 90%;
   font-size: 16vw;
   margin: 0;
   color: $white;
@@ -756,7 +756,7 @@ footer {
 
 @media only screen and (min-width: 992px) {
   .main-title {
-    bottom: -37px;
+    bottom: -20px;
     font-size: 11vw;
   }
   .onecolumn {

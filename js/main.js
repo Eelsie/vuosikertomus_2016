@@ -36,6 +36,10 @@ function play9(){
   document.getElementById('video9').innerHTML = '<iframe  src="https://www.youtube.com/embed/n8qoJ9-W0p0?autoplay=1&rel=0&theme=light&color=white" frameborder="0"></iframe>';
 }
 
+function play10(){
+  document.getElementById('video10').innerHTML = '<iframe  src="https://www.youtube.com/embed/9FGy1pXv2dk?autoplay=1&rel=0&theme=light&color=white" frameborder="0"></iframe>';
+}
+
 
 $(document).ready(function(){
 //
